@@ -45,6 +45,12 @@ def pcalc(rge):
         c=c+1
 
     else:
+        nfile = open('lastNumber.txt', 'w', encoding='utf-8')
+        write = str(x) + "," + str(c)
+        nfile.write(write)
+        nfile.close()
+
+        f = open('primes.txt', 'a')
 
         if len(str(x)) <= 5 :
             if c % 10 == 0 :
@@ -70,14 +76,16 @@ def pcalc(rge):
             print("Prime = " + str(x) + " with " + str(c) + " calculations")
 
         if xc%10 == 0:
-            f = open('primes.txt', 'a')
+
             lbr = "\n"
             f.write(lbr)
 
-        f = open('primes.txt', 'a')
+
         prime = str(x) + ","
         f.write(prime)
+        f.close()
         xc = xc+1
+
 #        return x
 
 
